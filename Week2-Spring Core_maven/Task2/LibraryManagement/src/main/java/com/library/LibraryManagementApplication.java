@@ -1,0 +1,15 @@
+package com.library;
+
+import com.library.service.BookService;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class LibraryManagementApplication {
+    public static void main(String[] args) {
+        // Use try-with-resources to ensure the context is closed properly
+        try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
+            BookService bookService = (BookService) context.getBean("bookService");
+            bookService.addBook("Spring in Action");
+        }
+    }
+}

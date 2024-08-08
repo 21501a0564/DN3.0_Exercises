@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Suppress Spring Framework debug logs -->
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.springframework.beans" level="WARN" />
+    <logger name="org.springframework.context" level="WARN" />
+    <logger name="org.springframework.core" level="WARN" />
+
+    <!-- Root logger -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
